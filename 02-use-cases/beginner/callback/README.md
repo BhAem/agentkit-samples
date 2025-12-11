@@ -42,15 +42,15 @@ after_agent_callback（收尾、日志汇总）
 
 | 组件                 | 描述                                                         |
 | -------------------- | ------------------------------------------------------------ |
-| **Agent 服务** | [agent.py](agent.py) - 配置回调和护栏的主 Agent                 |
-| **回调函数**   | [callbacks/](callbacks/) - 六个回调函数实现                     |
-| **工具定义**   | [tools/write_article.py](tools/write_article.py) - 文章撰写工具 |
-| **项目配置**   | [pyproject.toml](pyproject.toml) - 依赖管理                     |
+| **Agent 服务** | [agent.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/callback/agent.py) - 配置回调和护栏的主 Agent                 |
+| **回调函数**   | [callbacks/](https://github.com/volcengine/agentkit-samples/tree/main/02-use-cases/beginner/callback/callbacks) - 六个回调函数实现                     |
+| **工具定义**   | [tools/write_article.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/callback/tools/write_article.py) - 文章撰写工具 |
+| **项目配置**   | [pyproject.toml](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/callback/pyproject.toml) - 依赖管理                     |
 | **短期记忆**   | 本地后端存储会话上下文                                       |
 
 ### 代码特点
 
-**Agent 配置**（[agent.py](agent.py:11-22)）：
+**Agent 配置**（[agent.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/callback/agent.py#L11-L22)）：
 
 ```python
 root_agent = Agent(
@@ -67,7 +67,7 @@ root_agent = Agent(
 )
 ```
 
-**测试场景**（[agent.py](agent.py:37-44)）：
+**测试场景**（[agent.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/callback/agent.py#L37-L44)）：
 
 ```python
 # 场景1: 正常调用，触发工具和PII过滤
@@ -227,7 +227,7 @@ veadk deploy \
 - 记录请求开始日志
 - 请求限流和鉴权
 
-**示例**（[callbacks/before_agent_callback.py](callbacks/before_agent_callback.py)）：
+**示例**（[callbacks/before_agent_callback.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/callback/callbacks/before_agent_callback.py)）：
 
 ```python
 def before_agent_callback(agent, callback_context):
@@ -251,7 +251,7 @@ def before_agent_callback(agent, callback_context):
 - 参数调整（温度、max_tokens等）
 - 请求内容预处理
 
-**示例**（[callbacks/before_model_callback.py](callbacks/before_model_callback.py)）：
+**示例**（[callbacks/before_model_callback.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/callback/callbacks/before_model_callback.py)）：
 
 ```python
 def before_model_callback(callback_context, llm_request):
@@ -274,7 +274,7 @@ def before_model_callback(callback_context, llm_request):
 - 提取结构化信息
 - 内容审核和改写
 
-**示例**（[callbacks/after_model_callback.py](callbacks/after_model_callback.py)）：
+**示例**（[callbacks/after_model_callback.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/callback/callbacks/after_model_callback.py)）：
 
 ```python
 def after_model_callback(callback_context, llm_response):
@@ -296,7 +296,7 @@ def after_model_callback(callback_context, llm_response):
 - 权限检查
 - 轻量级参数预处理
 
-**示例**（[callbacks/before_tool_callback.py](callbacks/before_tool_callback.py)）：
+**示例**（[callbacks/before_tool_callback.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/callback/callbacks/before_tool_callback.py)）：
 
 ```python
 def before_tool_callback(tool_context):
@@ -321,7 +321,7 @@ def before_tool_callback(tool_context):
 - 结果持久化存储
 - 错误处理和重试
 
-**示例**（[callbacks/after_tool_callback.py](callbacks/after_tool_callback.py)）：
+**示例**（[callbacks/after_tool_callback.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/callback/callbacks/after_tool_callback.py)）：
 
 ```python
 def after_tool_callback(tool_context, tool_result):
@@ -350,7 +350,7 @@ def after_tool_callback(tool_context, tool_result):
 - 生成执行报告
 - 性能指标统计
 
-**示例**（[callbacks/after_agent_callback.py](callbacks/after_agent_callback.py)）：
+**示例**（[callbacks/after_agent_callback.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/callback/callbacks/after_agent_callback.py)）：
 
 ```python
 def after_agent_callback(agent, callback_context, result):
@@ -448,9 +448,9 @@ callback/
 
 完成 Callback 学习后，可以探索：
 
-1. **[Hello World](../hello_world/README.md)** - 了解基础 Agent
-2. **[Multi Agents](../multi_agents/README.md)** - 多 Agent 中的回调
-3. **[Travel Concierge](../travel_concierge/README.md)** - 工具集成
+1. **[Hello World](https://github.com/volcengine/agentkit-samples/tree/main/02-use-cases/beginner/hello_world/README.md)** - 了解基础 Agent
+2. **[Multi Agents](https://github.com/volcengine/agentkit-samples/tree/main/02-use-cases/beginner/multi_agents/README.md)** - 多 Agent 中的回调
+3. **[Travel Concierge](https://github.com/volcengine/agentkit-samples/tree/main/02-use-cases/beginner/travel_concierge/README.md)** - 工具集成
 4. **[Video Generator](../../video_gen/README.md)** - 复杂工作流
 
 ## 📖 参考资料

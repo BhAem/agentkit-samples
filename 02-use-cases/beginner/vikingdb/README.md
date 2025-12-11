@@ -30,15 +30,15 @@ LLM 生成回答
 
 | 组件 | 描述 |
 |-----------|-------------|
-| **Agent 服务** | [agent.py](agent.py) - 主应用程序，集成 KnowledgeBase 和 VikingDB |
+| **Agent 服务** | [agent.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/vikingdb/agent.py) - 主应用程序，集成 KnowledgeBase 和 VikingDB |
 | **知识库** | VikingDB 向量数据库，存储文档向量索引 |
 | **文档源** | tech.txt（技术文档）、products.txt（产品信息） |
-| **项目配置** | [pyproject.toml](pyproject.toml) - 依赖管理（uv 工具） |
+| **项目配置** | [pyproject.toml](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/vikingdb/pyproject.toml) - 依赖管理（uv 工具） |
 | **短期记忆** | 维护会话上下文 |
 
 ### 代码特点
 
-**知识库创建**（[agent.py](agent.py:22-29)）：
+**知识库创建**（[agent.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/vikingdb/agent.py#L22-L29)）:
 ```python
 # 准备知识源
 with open("/tmp/tech.txt", "w") as f:
@@ -51,7 +51,7 @@ kb = KnowledgeBase(backend="viking", app_name="test_app")
 kb.add_from_files(files=["/tmp/tech.txt", "/tmp/products.txt"])
 ```
 
-**Agent 配置**（[agent.py](agent.py:31-36)）：
+**Agent 配置**（[agent.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/vikingdb/agent.py#L31-L36)）：
 ```python
 root_agent = Agent(
     name="test_agent",
@@ -268,10 +268,10 @@ agent_server_app = AgentkitAgentServerApp(
 
 完成 VikingDB 示例后，可以探索更多功能：
 
-1. **[VikingMem](../vikingmem/README.md)** - 使用 VikingDB 实现长期记忆
-2. **[Episode Generation](../episode_generation/README.md)** - 生成图片和视频内容
-3. **[Restaurant Ordering](../restaurant_ordering/README.md)** - 构建复杂的业务流程 Agent
-4. **[Travel Concierge](../travel_concierge/README.md)** - 使用 Web 搜索工具规划旅行
+1. **[VikingMem](https://github.com/volcengine/agentkit-samples/tree/main/02-use-cases/beginner/vikingmem/README.md)** - 使用 VikingDB 实现长期记忆
+2. **[Episode Generation](https://github.com/volcengine/agentkit-samples/tree/main/02-use-cases/beginner/episode_generation/README.md)** - 生成图片和视频内容
+3. **[Restaurant Ordering](https://github.com/volcengine/agentkit-samples/tree/main/02-use-cases/beginner/restaurant_ordering/README.md)** - 构建复杂的业务流程 Agent
+4. **[Travel Concierge](https://github.com/volcengine/agentkit-samples/tree/main/02-use-cases/beginner/travel_concierge/README.md)** - 使用 Web 搜索工具规划旅行
 
 ## 📖 参考资料
 
