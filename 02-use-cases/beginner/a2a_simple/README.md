@@ -38,17 +38,17 @@ A2A 协议 (HTTP/JSONRPC)
 
 | 组件 | 描述 |
 |-----------|-------------|
-| **远程 Agent** | [remote/agent.py](remote/agent.py:14-40) - hello_world_agent，提供工具服务（端口 8001） |
-| **本地 Agent** | [agent.py](agent.py:16-21) - a2a_sample_agent，具有 add 工具和 sub_agents（端口 8000） |
-| **本地客户端** | [local_client.py](local_client.py) - A2ASimpleClient，调用远程服务 |
-| **工具：roll_die** | [remote/tools/roll_die.py](remote/tools/roll_die.py) - 投掷骰子 |
-| **工具：check_prime** | [remote/tools/check_prime.py](remote/tools/check_prime.py) - 检查质数 |
+| **远程 Agent** | [remote/agent.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/a2a_simple/remote/agent.py#L14-L40) - hello_world_agent，提供工具服务（端口 8001） |
+| **本地 Agent** | [agent.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/a2a_simple/agent.py#L16-L21) - a2a_sample_agent，具有 add 工具和 sub_agents（端口 8000） |
+| **本地客户端** | [local_client.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/a2a_simple/local_client.py) - A2ASimpleClient，调用远程服务 |
+| **工具：roll_die** | [remote/tools/roll_die.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/a2a_simple/remote/tools/roll_die.py) - 投掷骰子 |
+| **工具：check_prime** | [remote/tools/check_prime.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/a2a_simple/remote/tools/check_prime.py) - 检查质数 |
 | **AgentCard** | Agent 元数据和能力描述 |
-| **项目配置** | [remote/agentkit.yaml](remote/agentkit.yaml) - AgentKit 部署配置 |
+| **项目配置** | [remote/agentkit.yaml](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/a2a_simple/remote/agentkit.yaml) - AgentKit 部署配置 |
 
 ### 代码特点
 
-**本地 Agent 定义**（[agent.py](agent.py:16-21)）：
+**本地 Agent 定义**（[agent.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/a2a_simple/agent.py#L16-L21)）:
 ```python
 agent = Agent(
     name="a2a_sample_agent",
@@ -58,7 +58,7 @@ agent = Agent(
 )
 ```
 
-**远程 Agent 定义**（[remote/agent.py](remote/agent.py:14-40)）：
+**远程 Agent 定义**（[remote/agent.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/a2a_simple/remote/agent.py#L14-L40)）：
 ```python
 root_agent = Agent(
     name='hello_world_agent',
@@ -76,7 +76,7 @@ root_agent = Agent(
 )
 ```
 
-**AgentCard 配置**（[remote/agent.py](remote/agent.py:48-58)）：
+**AgentCard 配置**（[remote/agent.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/a2a_simple/remote/agent.py#L48-L58)）：
 ```python
 agent_card = AgentCard(
   capabilities=AgentCapabilities(streaming=True),
@@ -91,7 +91,7 @@ agent_card = AgentCard(
 )
 ```
 
-**本地客户端调用**（[local_client.py](local_client.py:32-97)）：
+**本地客户端调用**（[local_client.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/a2a_simple/local_client.py#L32-L97)）：
 ```python
 async def create_task(self, agent_url: str, message: str) -> str:
     # 获取 Agent Card
@@ -109,7 +109,7 @@ async def create_task(self, agent_url: str, message: str) -> str:
         responses.append(response)
 ```
 
-**工具状态管理**（[remote/tools/roll_die.py](remote/tools/roll_die.py:4-18)）：
+**工具状态管理**（[remote/tools/roll_die.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/a2a_simple/remote/tools/roll_die.py#L4-L18)）：
 ```python
 def roll_die(sides: int, tool_context: ToolContext) -> int:
     result = random.randint(1, sides)
@@ -435,9 +435,9 @@ a2a_app.run(agent_card=agent_card, host="0.0.0.0", port=8000)
 
 完成 A2A Simple 示例后，可以探索更多功能：
 
-1. **[Multi Agents](../multi_agents/README.md)** - 构建多智能体协作系统
-2. **[Restaurant Ordering](../restaurant_ordering/README.md)** - 高级 Agent 特性
-3. **[Travel Concierge](../travel_concierge/README.md)** - 使用 Web 搜索工具
+1. **[Multi Agents](https://github.com/volcengine/agentkit-samples/tree/main/02-use-cases/beginner/multi_agents/README.md)** - 构建多智能体协作系统
+2. **[Restaurant Ordering](https://github.com/volcengine/agentkit-samples/tree/main/02-use-cases/beginner/restaurant_ordering/README.md)** - 高级 Agent 特性
+3. **[Travel Concierge](https://github.com/volcengine/agentkit-samples/tree/main/02-use-cases/beginner/travel_concierge/README.md)** - 使用 Web 搜索工具
 4. **分布式系统**：部署多个 A2A Agent 构建分布式智能体网络
 
 ## 📖 参考资料

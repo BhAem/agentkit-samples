@@ -35,16 +35,16 @@ Travel Agent（旅游规划师）
 
 | 组件                 | 描述                                                |
 | -------------------- | --------------------------------------------------- |
-| **Agent 服务** | [agent.py](agent.py) - 旅游规划 Agent 应用             |
-| **专业指令**   | [agent.py](agent.py:21-94) - 详细的角色定义和工作流程  |
-| **测试客户端** | [client.py](client.py) - SSE 流式调用客户端            |
-| **项目配置**   | [pyproject.toml](pyproject.toml) - 依赖管理（uv 工具） |
+| **Agent 服务** | [agent.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/travel_concierge/agent.py) - 旅游规划 Agent 应用             |
+| **专业指令**   | [agent.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/travel_concierge/agent.py#L21-L94) - 详细的角色定义和工作流程  |
+| **测试客户端** | [client.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/travel_concierge/client.py) - SSE 流式调用客户端            |
+| **项目配置**   | [pyproject.toml](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/travel_concierge/pyproject.toml) - 依赖管理（uv 工具） |
 | **Web 搜索**   | `web_search` - 内置的网络搜索工具                 |
 | **短期记忆**   | 本地后端存储会话上下文                              |
 
 ### 代码特点
 
-**Agent 定义**（[agent.py](agent.py:100-105)）：
+**Agent 定义**（[agent.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/travel_concierge/agent.py#L100-L105)）：
 
 ```python
 root_agent = Agent(
@@ -55,7 +55,7 @@ root_agent = Agent(
 )
 ```
 
-**专业指令系统**（[agent.py](agent.py:21-44)）：
+**专业指令系统**（[agent.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/travel_concierge/agent.py#L21-L44)）：
 
 包含完整的角色定义：
 
@@ -502,7 +502,7 @@ travel_concierge/
 
 ### Web 搜索工具使用
 
-**工具集成**（[agent.py](agent.py:104)）：
+**工具集成**（[agent.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/travel_concierge/agent.py#L104)）：
 
 ```python
 from veadk.tools.builtin_tools.web_search import web_search
@@ -554,9 +554,9 @@ Agent 会：
 
 完成 Travel Concierge 后，可以探索：
 
-1. **[Hello World](../hello_world/README.md)** - 了解基础 Agent
-2. **[MCP Simple](../mcp_simple/README.md)** - 集成更多专业工具
-3. **[Multi Agents](../multi_agents/README.md)** - 构建多Agent协作
+1. **[Hello World](https://github.com/volcengine/agentkit-samples/tree/main/02-use-cases/beginner/hello_world/README.md)** - 了解基础 Agent
+2. **[MCP Simple](https://github.com/volcengine/agentkit-samples/tree/main/02-use-cases/beginner/mcp_simple/README.md)** - 集成更多专业工具
+3. **[Multi Agents](https://github.com/volcengine/agentkit-samples/tree/main/02-use-cases/beginner/multi_agents/README.md)** - 构建多Agent协作
 4. **[Video Generator](../../video_gen/README.md)** - 复杂工具链编排
 
 ## 📖 参考资料

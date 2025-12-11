@@ -31,15 +31,15 @@
 
 | 组件                     | 描述                                                      |
 | ------------------------ | --------------------------------------------------------- |
-| **主 Agent**       | [agent.py](agent.py:37-43) - eposide_generator，协调子 Agent |
-| **图像生成 Agent** | [agent.py](agent.py:30-35) - image_generator，生成图片       |
-| **视频生成 Agent** | [agent.py](agent.py:23-28) - video_generator，生成视频       |
+| **主 Agent**       | [agent.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/episode_generation/agent.py#L37-L43) - eposide_generator，协调子 Agent |
+| **图像生成 Agent** | [agent.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/episode_generation/agent.py#L30-L35) - image_generator，生成图片       |
+| **视频生成 Agent** | [agent.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/episode_generation/agent.py#L23-L28) - video_generator，生成视频       |
 | **内置工具**       | image_generate, video_generate, web_search                |
-| **项目配置**       | [pyproject.toml](pyproject.toml) - 依赖管理（uv 工具）       |
+| **项目配置**       | [pyproject.toml](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/episode_generation/pyproject.toml) - 依赖管理（uv 工具）       |
 
 ### 代码特点
 
-**子 Agent 定义**（[agent.py](agent.py:23-35)）：
+**子 Agent 定义**（[agent.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/episode_generation/agent.py#L23-L35)）：
 
 ```python
 video_generator = Agent(
@@ -57,7 +57,7 @@ image_generator = Agent(
 )
 ```
 
-**主 Agent 配置**（[agent.py](agent.py:37-43)）：
+**主 Agent 配置**（[agent.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/episode_generation/agent.py#L37-L43)）：
 
 ```python
 root_agent = Agent(
@@ -69,7 +69,7 @@ root_agent = Agent(
 )
 ```
 
-**使用示例**（[agent.py](agent.py:47-67)）：
+**使用示例**（[agent.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/episode_generation/agent.py#L47-L67)）：
 
 ```python
 async def main(prompts: list[str]):
@@ -312,11 +312,11 @@ from veadk.tools.builtin_tools.web_search import web_search
 
 ## 🎯 下一步
 
-完成 Episode Generation 示例后，可以探索更多功能：
+完成 Episode Generation 示例后,可以探索更多功能：
 
-1. **[Restaurant Ordering](../restaurant_ordering/README.md)** - 构建复杂的业务流程 Agent
-2. **[Multi Agents](../multi_agents/README.md)** - 更复杂的多智能体协作
-3. **[Travel Concierge](../travel_concierge/README.md)** - 使用 Web 搜索工具规划旅行
+1. **[Restaurant Ordering](https://github.com/volcengine/agentkit-samples/tree/main/02-use-cases/beginner/restaurant_ordering/README.md)** - 构建复杂的业务流程 Agent
+2. **[Multi Agents](https://github.com/volcengine/agentkit-samples/tree/main/02-use-cases/beginner/multi_agents/README.md)** - 更复杂的多智能体协作
+3. **[Travel Concierge](https://github.com/volcengine/agentkit-samples/tree/main/02-use-cases/beginner/travel_concierge/README.md)** - 使用 Web 搜索工具规划旅行
 4. **[Video Generator](../../video_gen/README.md)** - 高级视频生成示例
 
 ## 📖 参考资料

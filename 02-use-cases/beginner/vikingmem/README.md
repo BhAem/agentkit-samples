@@ -31,15 +31,15 @@ Agent + Runner
 
 | 组件                 | 描述                                                |
 | -------------------- | --------------------------------------------------- |
-| **Agent 服务** | [agent.py](agent.py) - 主应用程序，集成短期和长期记忆  |
-| **测试脚本**   | [local_test.py](local_test.py) - 完整的记忆功能演示    |
+| **Agent 服务** | [agent.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/vikingmem/agent.py) - 主应用程序，集成短期和长期记忆  |
+| **测试脚本**   | [local_test.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/vikingmem/local_test.py) - 完整的记忆功能演示    |
 | **短期记忆**   | ShortTermMemory - 会话级别的临时存储                |
 | **长期记忆**   | LongTermMemory - VikingDB 持久化存储                |
-| **项目配置**   | [pyproject.toml](pyproject.toml) - 依赖管理（uv 工具） |
+| **项目配置**   | [pyproject.toml](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/vikingmem/pyproject.toml) - 依赖管理（uv 工具） |
 
 ### 代码特点
 
-**短期记忆配置**（[local_test.py](local_test.py:26-34)）：
+**短期记忆配置**（[local_test.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/vikingmem/local_test.py#L26-L34)）：
 
 ```python
 # 短期记忆：仅同session有效
@@ -53,7 +53,7 @@ runner1 = Runner(
 )
 ```
 
-**长期记忆配置**（[local_test.py](local_test.py:56-69)）：
+**长期记忆配置**（[local_test.py](https://github.com/volcengine/agentkit-samples/blob/main/02-use-cases/beginner/vikingmem/local_test.py#L56-L69)）：
 
 ```python
 # 初始化长期记忆（Viking后端）
@@ -320,10 +320,10 @@ agent_server_app = AgentkitAgentServerApp(
 
 完成 VikingMem 示例后，可以探索更多功能：
 
-1. **[VikingDB](../vikingdb/README.md)** - 构建文档知识库
-2. **[Episode Generation](../episode_generation/README.md)** - 生成图片和视频内容
-3. **[Restaurant Ordering](../restaurant_ordering/README.md)** - 构建复杂的业务流程 Agent
-4. **[Multi Agents](../multi_agents/README.md)** - 构建多智能体协作系统
+1. **[VikingDB](https://github.com/volcengine/agentkit-samples/tree/main/02-use-cases/beginner/vikingdb/README.md)** - 构建文档知识库
+2. **[Episode Generation](https://github.com/volcengine/agentkit-samples/tree/main/02-use-cases/beginner/episode_generation/README.md)** - 生成图片和视频内容
+3. **[Restaurant Ordering](https://github.com/volcengine/agentkit-samples/tree/main/02-use-cases/beginner/restaurant_ordering/README.md)** - 构建复杂的业务流程 Agent
+4. **[Multi Agents](https://github.com/volcengine/agentkit-samples/tree/main/02-use-cases/beginner/multi_agents/README.md)** - 构建多智能体协作系统
 
 ## 📖 参考资料
 
