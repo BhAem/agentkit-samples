@@ -131,8 +131,6 @@ export MODEL_AGENT_NAME=doubao-seed-1-6-251015
 export VOLCENGINE_ACCESS_KEY=<Your Access Key>
 export VOLCENGINE_SECRET_KEY=<Your Secret Key>
 
-export AGENTKIT_TOOL_SERVICE_CODE=<Your Tool Service Code>
-export AGENTKIT_TOOL_HOST=<Your Tool Host>
 export AGENTKIT_TOOL_ID=<Your Tool ID>
 ```
 
@@ -190,7 +188,13 @@ uv run parallel.py
 
 - 参考 [用户指南](https://www.volcengine.com/docs/6291/65568?lang=zh) 获取 AK/SK
 
-**3. 设置环境变量：**
+**3. 创建 AgentKit 工具：**
+
+ - 工具类型选择：预置工具 -> Skill Sandbox 
+
+![](assets/images/skill-sandbox.jpeg)
+
+**4. 设置环境变量：**
 
 ```bash
 # 火山引擎访问凭证（必需）
@@ -204,7 +208,11 @@ export VOLCENGINE_SECRET_KEY=<Your Secret Key>
 cd agentkit-samples/00-advanced/agent_skills
 
 # 配置部署参数
-agentkit config
+agentkit config \
+--agent_name agent_skills \
+--entry_point 'agent.py' \
+--runtime_envs AGENTKIT_TOOL_ID={{your_tool_id}} \
+--launch_type cloud
 
 # 启动云端服务
 agentkit launch
