@@ -28,6 +28,8 @@ repos:
       entry: python
       args:
         - workflow_utils/check_readme_metadata.py
-      language: system
+      language: python
+      additional_dependencies:
+        - python-frontmatter
       files: ^02-use-cases/.*/README\.md$
       types_or: [ markdown ]
