@@ -39,6 +39,28 @@
 # ============================================================
 import sys
 
+# ============================================================
+# 正常的导入和代码
+# ============================================================
+
+import json
+import os
+from pathlib import Path
+from typing import Any
+
+import httpx
+from dotenv import load_dotenv
+
+from veadk import Agent
+from veadk.integrations.ve_identity.auth_mixins import OAuth2AuthMixin
+from google.adk.tools.function_tool import FunctionTool
+from google.adk.tools.tool_context import ToolContext
+from veadk.integrations.ve_identity import (
+    AuthRequestProcessor,
+    VeIdentityFunctionTool,
+    oauth2_auth,
+)
+
 
 def _patched_patch_google_adk_telemetry():
     """修复版本的 patch_google_adk_telemetry，避免 RuntimeError"""
@@ -72,29 +94,7 @@ try:
 except ImportError:
     pass
 
-# ============================================================
-# 正常的导入和代码
-# ============================================================
-
-import json
-import os
-from pathlib import Path
-from typing import Any
-
-import httpx
-from dotenv import load_dotenv
-
 load_dotenv(Path(__file__).parent / ".env")
-
-from veadk import Agent
-from veadk.integrations.ve_identity import (
-    AuthRequestProcessor,
-    VeIdentityFunctionTool,
-    oauth2_auth,
-)
-from veadk.integrations.ve_identity.auth_mixins import OAuth2AuthMixin
-from google.adk.tools.function_tool import FunctionTool
-from google.adk.tools.tool_context import ToolContext
 
 # 从环境变量读取凭证提供者名称
 GITHUB_CREDENTIAL_PROVIDER = os.getenv("GITHUB_CREDENTIAL_PROVIDER", "github_oauth")
